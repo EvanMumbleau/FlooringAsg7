@@ -6,6 +6,10 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
+
+/**
+ * declare variables
+ */
 public class MainActivity extends AppCompatActivity {
 
     static TextView tvResult;
@@ -19,10 +23,12 @@ public class MainActivity extends AppCompatActivity {
         tvResult = (TextView) findViewById(R.id.textViewResult);
 
         Bundle extras = getIntent().getExtras();
-        Length = extras.getDouble("tvLength");
-        Width = extras.getDouble("tvWidth");
+        Length = extras.getDouble("tvLength");      //set length to user input
+        Width = extras.getDouble("tvWidth");        //set width to user input
 
-        Area = Length*Width;
+        Area = Length*Width;        //calculate flooring area
+
+        //display final result
         tvResult.setText("Flooring needed: \nWidth is " + Width + " and Length is " + Length + " and flooring needed is " + Area);
     }
 }

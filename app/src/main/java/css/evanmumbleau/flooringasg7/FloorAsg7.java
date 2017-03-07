@@ -16,6 +16,9 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 
+/*
+declare variables
+ */
 public class FloorAsg7 extends AppCompatActivity {
 
     private EditText tvWidth, tvLength;
@@ -26,14 +29,16 @@ public class FloorAsg7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor_asg7);
 
+        //initialize widgets
         tvWidth = (EditText) findViewById(R.id.editTextWidth);
         tvLength = (EditText) findViewById(R.id.editTextLength);
         btnShowResult = (Button) findViewById(R.id.btnResults);
     }
+
     public void onClickButn (View view){
-        Intent calcIntent = new Intent(FloorAsg7.this, MainActivity.class);
-        calcIntent.putExtra("tvLength", Double.parseDouble(tvLength.getText().toString()));
-        calcIntent.putExtra("tvWidth", Double.parseDouble(tvWidth.getText().toString()));
-        startActivity(calcIntent);
+        Intent calcIntent = new Intent(FloorAsg7.this, MainActivity.class);     //Call second activity
+        calcIntent.putExtra("tvLength", Double.parseDouble(tvLength.getText().toString()));     //get length as string and convert to double
+        calcIntent.putExtra("tvWidth", Double.parseDouble(tvWidth.getText().toString()));       //get width as string and convert to double
+        startActivity(calcIntent);      //initiate second activity
     }
 }
